@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RL">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../_libs/robotlegs/robotlegs-framework-v1.1.1.zip Folder/bin/robotlegs-framework-v1.1.1.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
