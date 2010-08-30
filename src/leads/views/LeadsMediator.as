@@ -5,10 +5,8 @@ import flash.desktop.SystemTrayIcon;
 import flash.display.NativeMenu;
 import flash.display.NativeMenuItem;
 import flash.events.Event;
-
 import flash.events.InvokeEvent;
 import flash.events.MouseEvent;
-
 import flash.system.Capabilities;
 
 import leads.models.events.LeadEvent;
@@ -23,7 +21,7 @@ public class LeadsMediator extends Mediator{
     [Inject]
     public var view:Leads;
 
-    [Embed(source="/../icons/icon16.png")]
+    [Embed(source="/../assets/app_icons/icon16.png")]
     private var icon16:Class;
 
     private var allowExitForMacs:Boolean = false;

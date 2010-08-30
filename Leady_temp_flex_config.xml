@@ -5,7 +5,6 @@
     <source-path>
       <path-element>src</path-element>
       <path-element>tests</path-element>
-      <path-element>src/icons</path-element>
       <path-element>/Users/krzysztof/Documents/Flex/_libs/as3core</path-element>
     </source-path>
     <library-path append="true">

@@ -8,7 +8,6 @@ import org.robotlegs.mvcs.Mediator;
 
 public class ConfigViewMediator extends Mediator {
 
-    
     [Inject]
     public var view:ConfigView;
 
@@ -16,7 +15,6 @@ public class ConfigViewMediator extends Mediator {
     {
         if(!NativeApplication.supportsStartAtLogin)
             view.openOnStartupCheckbox.enabled = false;
-
         
         addViewListener(ConfigEvent.SAVE_DATA, dispatch);
         addContextListener(ConfigEvent.DATA_LOADED, handleDataLoaded);

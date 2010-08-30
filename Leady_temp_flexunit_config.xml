@@ -5,7 +5,6 @@
     <source-path>
       <path-element>src</path-element>
       <path-element>tests</path-element>
-      <path-element>src/icons</path-element>
       <path-element>/Users/krzysztof/Documents/Flex/_libs/as3core</path-element>
     </source-path>
     <library-path append="true">
@@ -17,8 +16,5 @@
       <path-element>/Users/krzysztof/Documents/Flex/_libs/flexunit4.1/flexunit-cilistener-4.1.0-beta3.76-sdk4.0.0.14159.swc</path-element>
     </library-path>
   </compiler>
-  <file-specs>
-    <path-element>/var/folders/GG/GGTzB12QGVe14c7WbTt8s++++TI/-Tmp-//Leady_krzysztof____FlexUnitLauncher.mxml</path-element>
-  </file-specs>
   <output>/Users/krzysztof/Documents/Flex/Projects/Leady/out/production/Leady/_flexunit.swf</output>
 </flex-config>
