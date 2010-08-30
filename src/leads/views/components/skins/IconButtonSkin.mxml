@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+             xmlns:controls="mx.controls.*">
+
+    <fx:Metadata>
+        [HostComponent("leads.views.components.IconButton")]
+    </fx:Metadata>
+
+    <s:layout>
+        <s:BasicLayout/>
+    </s:layout>
+
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <!--
+    <s:Rect  left="0" right="0" top="0" bottom="0" width="69" height="20" radiusX="2" radiusY="2">
+        <s:stroke>
+            <s:SolidColorStroke id="outline" weight="0"/>
+        </s:stroke>
+        <s:fill>
+            <s:LinearGradient>
+                <s:GradientEntry color="#ffffff" ratio="0"/>
+                <s:GradientEntry color="#cccccc" ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    -->
+        
+    <controls:Image
+            id="icon"
+            source="{hostComponent.getStyle('icon')}"
+            verticalCenter="0"
+            horizontalCenter="0"
+            alpha="{(this.currentState == 'up')?.75:1}"
+            />
+
+
+    <fx:Script>
+		<![CDATA[
+
+			private function setIcon():void{
+				if(hostComponent.getStyle("icon") != null){
+					icon.source = hostComponent.getStyle("icon");
+				}
+			}
+
+		]]>
+	</fx:Script>
+
+</s:SparkSkin>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="100%" height="250">
+
+
+    <s:TextArea id="textArea"
+                editable="false"
+                width="100%" height="250"
+                color="#66ff66" contentBackgroundColor="#000000"
+                fontFamily="Courier"/>
+
+    <fx:Script><![CDATA[
+
+        private function scrollToMax():void
+        {
+            textArea.validateNow();
+            textArea.scroller.verticalScrollBar.value = textArea.scroller.verticalScrollBar.maximum;
+
+        }
+        
+        public function addLogText(str:String):void
+        {
+            textArea.text += str;
+
+            //scroll to max
+            scrollToMax();
+        }
+
+        ]]></fx:Script>
+    
+</s:Group>

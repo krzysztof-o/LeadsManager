@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="400" height="250"
+        >
+
+    <mx:DataGrid id="dataGrid" width="100%" height="100%" click="handleDataGridClick(event)" >
+
+        <mx:columns>
+            <mx:DataGridColumn headerText="Nr" dataField="nr" width="75"/>
+            <mx:DataGridColumn headerText="Typ" dataField="type" width="130"/>
+            <mx:DataGridColumn headerText="Miejsce" dataField="address"/>
+        </mx:columns>
+
+    </mx:DataGrid>
+
+    <s:Group visible="{dataGrid.dataProvider.length == 0}" horizontalCenter="0" verticalCenter="0">
+        <s:Rect width="100%" height="100%" radiusX="15" radiusY="15" alpha=".5">
+            <s:fill>
+                <s:SolidColor color="#000000"/>
+            </s:fill>
+        </s:Rect>
+        <s:Label text="Brak nowych ofert" color="#FFFFFF"
+                 paddingBottom="20" paddingLeft="30" paddingRight="30" paddingTop="20"
+            horizontalCenter="0" verticalCenter="0" filters="{[new DropShadowFilter(1, 45)]}"
+            fontSize="20" fontWeight="bold"/>
+    </s:Group>
+
+
+    <fx:Script><![CDATA[
+        import leads.models.vo.LeadVO;
+        import leads.views.events.SelectedLeadEvent;
+
+        import spark.filters.DropShadowFilter;
+
+        private function handleDataGridClick(event:MouseEvent):void
+        {
+            if (dataGrid.selectedItem)
+                dispatchEvent(new SelectedLeadEvent(SelectedLeadEvent.LEAD_CLICKED, dataGrid.selectedItem as LeadVO));
+        }
+
+        ]]></fx:Script>
+</s:Group>

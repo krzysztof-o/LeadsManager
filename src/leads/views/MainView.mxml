@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" xmlns:view="leads.views.*"
+         xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:components="leads.views.components.*"
+         width="100%" height="300">
+
+
+    <components:IconTabBar id="tabs" dataProvider="{viewStack}" y="7" x="5"/>
+    <mx:ViewStack id="viewStack" width="100%" height="250" y="50" creationPolicy="all">
+
+        <s:NavigatorContent label="LEADY" icon="@Embed('/../assets/icons/leadsIcon.png')">
+            <view:NewLeadView/>
+        </s:NavigatorContent>
+
+        <s:NavigatorContent label="LOG" icon="@Embed('/../assets/icons/logIcon.png')">
+            <view:LogView/>
+        </s:NavigatorContent>
+
+        <s:NavigatorContent label="OPCJE" icon="@Embed('/../assets/icons/configIcon.png')">
+            <view:ConfigView/>
+        </s:NavigatorContent>
+
+    </mx:ViewStack>
+
+    
+</s:Group>

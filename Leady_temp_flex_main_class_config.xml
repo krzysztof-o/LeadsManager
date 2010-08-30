@@ -1,0 +1,17 @@
+<flex-config xmlns="http://www.adobe.com/2006/flex-config">
+  <target-player>10.0.0</target-player>
+  <compiler>
+    <debug>true</debug>
+    <source-path>
+      <path-element>src</path-element>
+      <path-element>/Users/krzysztof/Documents/Flex/_libs/as3core</path-element>
+    </source-path>
+    <library-path append="true">
+      <path-element>/Users/krzysztof/Documents/Flex/_libs/robotlegs/robotlegs-framework-v1.1.1.zip Folder/bin/robotlegs-framework-v1.1.1.swc</path-element>
+    </library-path>
+  </compiler>
+  <file-specs>
+    <path-element>src/Leads.mxml</path-element>
+  </file-specs>
+  <output>/Users/krzysztof/Documents/Flex/Projects/Leady/out/production/Leady/_Leads.swf</output>
+</flex-config>

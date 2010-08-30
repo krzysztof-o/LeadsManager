@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:models="leads.models.*" xmlns:vo="leads.models.vo.*"
+         width="400" height="250">
+
+    
+    <s:Rect width="400" height="300" includeInLayout="false">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0xcccccc" alpha=".5"/>
+                <s:GradientEntry color="0xD8D8D8"/>
+            </s:LinearGradient>
+            </s:fill>
+        
+        </s:Rect>
+    
+    <s:Group horizontalCenter="-20" verticalCenter="0">
+        <s:layout>
+            <s:VerticalLayout/>
+        </s:layout>
+
+
+        <s:Label text="Dane do logowania" fontSize="15" fontWeight="bold" />
+        <s:Group width="250">
+            <s:Label text="E-mail:" verticalCenter="0"/>
+            <s:TextInput id="emailTextInput" width="200" right="0" focusOut="saveUserData()"/>
+        </s:Group>
+
+        <s:Group width="250">
+
+            <s:Label text="Hasło:" verticalCenter="0"/>
+            <s:TextInput id="passwordTextInput" displayAsPassword="true" width="200" right="0"
+                         focusOut="saveUserData()"/>
+        </s:Group>
+
+        <mx:Spacer height="20"/>
+
+        <s:Label text="Ustawienia programu" fontSize="15" fontWeight="bold" />
+        <s:CheckBox id="openOnStartupCheckbox" label="Uruchom przy starcie systemu" change="saveUserData();"/>
+        <s:Group>
+            <s:layout>
+                <s:HorizontalLayout verticalAlign="middle"/>
+            </s:layout>
+            <s:Label text="Interwał:"/>
+            <s:TextInput id="timeTextInput" width="35" textAlign="right" change="saveUserData()"/>
+            <s:Label text="sek."/>
+        </s:Group>
+    </s:Group>
+
+    <fx:Declarations>
+        <vo:ConfigVO id="userVO">
+            <vo:email>{emailTextInput.text}</vo:email>
+            <vo:password>{passwordTextInput.text}</vo:password>
+            <vo:openOnStartup>{openOnStartupCheckbox.selected}</vo:openOnStartup>
+            <vo:timeInterval>{Number(timeTextInput.text)}</vo:timeInterval>
+        </vo:ConfigVO>
+    </fx:Declarations>
+
+
+    <fx:Script><![CDATA[
+        import leads.models.vo.ConfigVO;
+        import leads.views.events.ConfigEvent;
+
+        private function saveUserData():void {
+            dispatchEvent(new ConfigEvent(ConfigEvent.SAVE_DATA, userVO));
+        }
+
+        public function loadUserData(vo:ConfigVO):void {
+            emailTextInput.text = vo.email;
+            passwordTextInput.text = vo.password;
+            openOnStartupCheckbox.selected = vo.openOnStartup;
+            timeTextInput.text = String(vo.timeInterval);
+        }
+
+        ]]></fx:Script>
+</s:Group>
