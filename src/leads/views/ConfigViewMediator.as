@@ -8,6 +8,7 @@ import org.robotlegs.mvcs.Mediator;
 
 public class ConfigViewMediator extends Mediator {
 
+    
     [Inject]
     public var view:ConfigView;
 
